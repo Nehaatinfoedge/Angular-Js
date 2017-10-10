@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html ng-app="calcNumbers">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+	<script src="js/calcNumbers.js"></script>
+</head>
+<body>
+	<h3>Calculate two numbers using Angular Js</h3>
+	<div ng-controller="calcNumbersController">
+	<form ng-submit="calcNumbersController()">
+		<input type="number" name="numOne" ng-model="numOne" size="20"/><br/><br/>
+		<input type="number" name="numTwo" ng-model="numTwo" size="20"/><br/><br/>
+		<input type="radio" name="myOper" ng-model="myOper" value="+" selected/>Add
+		<input type="radio" name="myOper" ng-model="myOper" value="-" />Subtract
+		<input type="radio" name="myOper" ng-model="myOper" value="*" />Multiply
+		<input type="radio" name="myOper" ng-model="myOper" value="/" />Divide
+	</form>
+		{{numOne}} {{myOper}} {{numTwo}} = {{doCalculation(myOper).toFixed(2)}}
+	</div>
+</body>
+</html>
