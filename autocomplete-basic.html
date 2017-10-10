@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="js/autocomplete-basic.js"></script>
+  </head>
+  <body>
+    <div ng-app="myApp">
+        <div ng-controller="MyCtrl">
+            <div>jQuery UI integration in AngularJS : creation autocomplete tag</div>
+            <div><font color="red">selection is ? {{name}}</font></div>
+            <div><autocomplete list="availableTags" selection="name"/></div>
+        </div>
+    </div>
+
+  </body>
+</html>
