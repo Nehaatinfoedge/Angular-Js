@@ -1,0 +1,44 @@
+<div class="container">
+	<form>
+        <h2>User List</h2>
+        <div class="row form-group" ng-init = "getUsers()">
+        	<div class="col-md-5 col-sm-5">
+		        	<label>Search By Name</label>
+		        	<input type="text" class="form-control" placeholder="Search" ng-model = 'page.data.search'/>
+	        	</div>
+        </div>
+         <div class="row form-group">
+        	<div class="col-md-5 col-sm-5">
+		        	<label>Highlighted Text : {{page.data.highlightText}}</label>
+	        	</div>
+        	</div>
+	        <div class="row form-group">
+	        	<div class="col-md-12 col-sm-12">
+				<table class="table">
+					<tr>
+						<th>Name
+						</th>
+						<th>Address
+						</th>
+						<th>City
+						</th>
+						<th>Phone
+						</th>
+					</tr>
+					<tr ng-repeat = "user in page.data.userList | userSearch : page.data.search">
+						<td><span highlight-name filter-value = "page.data.search" display = 'display(user)' highlight-text = 'page.data.highlightText'>{{user.firstname}} {{user.lastname}}</span></td>
+						<td>{{user.address}}</td>
+						<td>{{user.city}}</td>
+						<td>{{user.phone}}</td>
+					</tr>
+				</table>
+	        	</div>
+	        </div>
+	       
+	        <div class="row form-group">
+	        	<div class="col-md-5 col-sm-5">
+	        		<a class="btn btn-sm btn-primary" type="button" href = "#/create/user">Create User</a>
+	        	</div>
+	        </div>
+     <form>
+</div>

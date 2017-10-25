@@ -1,0 +1,40 @@
+<div class="container">
+	<form name = "createUserForm" ng-submit = "createUser()">
+        <h2>Create User</h2>
+	        <div class="row form-group">
+	        	<div class="col-md-5 col-sm-5">
+		        	<label>First Name</label>
+		        	<input type="text" class="form-control" placeholder="First Name" ng-model = 'page.data.firstName' ng-required = "true"/>
+	        	</div>
+	        	<div class="col-md-5 col-sm-5">
+		        	<label>Last Name</label>
+		        	<input type="text" class="form-control" placeholder="Last Name" ng-model = 'page.data.lastName' ng-required = "true"/>
+	        	</div>
+	        </div>
+	        <div class="row form-group">
+	        	<div class="col-md-5 col-sm-5">
+		        	<label>Address</label>
+		        	<input type="text" class="form-control" placeholder="Address" ng-model = 'page.data.address' ng-required = "true"/>
+	        	</div>
+	        	<div class="col-md-5 col-sm-5">
+		        	<label>City</label>
+		        	<input type="text" class="form-control" placeholder="City" ng-model = 'page.data.city' ng-required = "true"/>
+	        	</div>
+	        </div>
+	        <div class="row form-group">
+	        	<div class="col-md-5 col-sm-5">
+		        	<label>Email</label>
+		        	<input type="email" class="form-control" placeholder="Email" ng-model = 'page.data.email' ng-required = "true"/>
+	        	</div>
+	        	<div class="col-md-5 col-sm-5">
+		        	<label>Phone</label>
+		        	<input type="text" class="form-control" placeholder="Phone" ng-model = 'page.data.phone' ng-required = "true"/>
+	        	</div>
+	        </div>
+	        <div class="row form-group">
+	        	<div class="col-md-5 col-sm-5">
+		        	<button class="btn btn-lg btn-primary" type="submit" ng-disabled = "createUserForm.$invalid">Submit</button>
+	        	</div>
+	        </div>
+     <form>
+</div>
