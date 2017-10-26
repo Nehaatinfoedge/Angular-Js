@@ -65,9 +65,9 @@ function getDummyData()
 	}
 	else{
     	    return [
-         	{EmpId:2, name:'Jitendra', Email: 'jz@gmail.com'},
-         	{EmpId:1, name:'Minal', Email: 'amz@gmail.com'},
-         	{EmpId:3, name:'Rudra', Email: 'ruz@gmail.com'} 
+         	{firstName:'Neha', lastName:'Jain', username: 'neha@infoedge.com', password:'12345678'},
+         	{firstName:'Ravi', lastName:'abc', username: 'ravi@infoedge.com', password:'12345678'},
+         	{firstName:'pankhuri', lastName:'Aggarwal', username: 'pankhuri@infoedge.com', password:'12345678'}
            ];
 	}
 }
