@@ -11,36 +11,41 @@
         <table class="table  table-hover data-table sort display">
              <thead>
                  <tr>
-                     <th class="EmpId"> <a href="" ng-click="columnToOrder='EmpId';reverse=!reverse">EmpId 
+                     <th class="FirstName"> <a href="" ng-click="columnToOrder='firstName';reverse=!reverse">First Name
                           
                          </a></th>
-                     <th class="name"> <a href="" ng-click="columnToOrder='name';reverse=!reverse"> Name </a> </th>
-                 <th class="Email"> <a href="" ng-click="columnToOrder='Email';reverse=!reverse"> Email </a> </th>
-                     
+                     <th class="lastName"> <a href="" ng-click="columnToOrder='lastName';reverse=!reverse">Last Name </a> </th>
+                 <th class="username"> <a href="" ng-click="columnToOrder='username';reverse=!reverse"> UserName </a> </th>
+                 <th class="password"> <a href="" ng-click="columnToOrder='password';reverse=!reverse"> Password </a> </th>
                  </tr>
              </thead> 
              <tbody>
                  
                  <tr ng-repeat="item in filteredList | orderBy:columnToOrder:reverse">
-                     <td>{{item.EmpId}}</td>
-                     <td>{{item.name}}</td>
-                     <td>{{item.Email}}</td>
+                     <td>{{item.firstName}}</td>
+                     <td>{{item.lastName}}</td>
+                     <td>{{item.username}}</td>
+                     <td>{{item.password}}</td>
                  </tr>
              </tbody>
         </table>
          
         
 <div class="row">
-  <div class="col-xs-3">
-    <input type="text" ng-model="newEmpId" class="form-control" placeholder="EmpId">
+  <div class="col-l-3">
+    <input type="text" ng-model="newFirstName" class="form-control" placeholder="FirstName">
   </div>
-  <div class="col-xs-3">
-    <input type="text" ng-model="newName" class="form-control" placeholder="Name">
+  <div class="col-l-3">
+    <input type="text" ng-model="newLastName" class="form-control" placeholder="lastName">
   </div>
-  <div class="col-xs-4">
-    <input type="email" ng-model="newEmail" class="form-control" placeholder="Email">
+  <div class="col-l-4">
+    <input type="text" ng-model="newUsername" class="form-control" placeholder="username">
   </div> 
-     <div class="col-xs-1">
+ <div class="col-l-4">
+    <input type="text" ng-model="newPassword" class="form-control" placeholder="password">
+  </div>
+	
+     <div style="float:right;"class="col-xs-1">
          <button ng-click="add()" type="button" class="btn btn-primary">
               <span class="glyphicon glyphicon-plus"></span>
         </button> 

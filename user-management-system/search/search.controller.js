@@ -7,16 +7,17 @@
      	$scope.resetAll = function()
      	{
          $scope.filteredList = $scope.allItems ; 
-         $scope.newEmpId = '';
-         $scope.newName = '';
-         $scope.newEmail = '';
+         $scope.newFirstName = '';
+         $scope.newLastName = '';
+         $scope.newUsername = '';
+         $scope.newPassword = '';
          $scope.searchText = ''; 
      	}
      
      
      	$scope.add = function()
      	{
-         $scope.allItems.push({EmpId : $scope.newEmpId, name : $scope.newName, Email:$scope.newEmail});
+         $scope.allItems.push({firstName : $scope.newFirstName, lastName : $scope.newLastName, username:$scope.newUsername, password:$scope.newPassword});
          $scope.resetAll();  
      	}
      
@@ -41,7 +42,7 @@
 function searchUtil(item,toSearch)
 {
     /* Search Text in all 3 fields */
-    return ( item.name.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || item.Email.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || item.EmpId == toSearch
+    return ( item.firstName.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || item.lastName.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || item.username.toLowerCase().indexOf(toSearch.toLowerCase()) > -1 || item.password.toLowerCase().indexOf(toSearch.toLowerCase()) > -1
                             )                              
                      ? true : false ;
 }
@@ -49,9 +50,24 @@ function searchUtil(item,toSearch)
 /*Get Dummy Data for Example*/
 function getDummyData()
 {
-    return [
-         {EmpId:2, name:'Jitendra', Email: 'jz@gmail.com'},
-         {EmpId:1, name:'Minal', Email: 'amz@gmail.com'},
-         {EmpId:3, name:'Rudra', Email: 'ruz@gmail.com'} 
-        ];
+	if(localStorage.users!=''){
+		var userArray = [];
+		var ls = JSON.parse(localStorage.users);
+		angular.forEach(ls, function(value, key) {
+  			var obj={};
+			obj.firstName = value.firstName;
+			obj.lastName = value.lastName;
+			obj.username = value.username;
+			obj.password = value.password;
+			userArray.push(obj);
+		});
+		return userArray;
+	}
+	else{
+    	    return [
+         	{EmpId:2, name:'Jitendra', Email: 'jz@gmail.com'},
+         	{EmpId:1, name:'Minal', Email: 'amz@gmail.com'},
+         	{EmpId:3, name:'Rudra', Email: 'ruz@gmail.com'} 
+           ];
+	}
 }
