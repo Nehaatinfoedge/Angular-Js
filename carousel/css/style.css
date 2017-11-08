@@ -1,0 +1,7 @@
+.imageContainer {
+    height: 150px;
+}
+.imageContainer .image {
+    display: block;
+    height: 100%;
+}
